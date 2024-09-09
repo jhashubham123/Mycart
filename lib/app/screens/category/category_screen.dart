@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycart/app/screens/home/home_screen.dart';
 import 'package:mycart/app/theme/app_colors.dart';
 import 'package:mycart/app/theme/app_images.dart';
 import 'package:mycart/app/theme/app_textstyles.dart';
@@ -24,24 +25,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: [
           /// Categories app bar
           CustomAppBar(
-              needBorderRadius: false,
-              bottomPadding: 20,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Categories',
-                      style: AppTextStyles.white_22_700,
-                    ),
-                    Image.asset(
-                      AppImages.searchIcon,
-                      color: AppColors.whiteColor,
-                    ),
-                  ],
-                ),
-              )),
+            needBorderRadius: false,
+            bottomPadding: 20,
+            title: 'Categories',
+            action: Image.asset(
+              AppImages.searchIcon,
+              color: AppColors.whiteColor,
+            ),
+          ),
 
           Expanded(
             child: Row(
@@ -129,11 +120,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 SizedBox(
                   width: size.width * 0.02,
                 ),
-                const Expanded(
+                Expanded(
                     child: Padding(
                   padding: EdgeInsets.only(top: 5, right: 5),
                   child: ProductCard(
-                    itemCount: 10,
+                    productItem: data,
                     childAspectRatio: 1 / 1.7,
                   ),
                 ))

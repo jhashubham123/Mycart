@@ -3,7 +3,7 @@ import 'package:mycart/app/screens/cart/cart_screen.dart';
 import 'package:mycart/app/screens/category/category_screen.dart';
 import 'package:mycart/app/screens/home/home_screen.dart';
 import 'package:mycart/app/screens/profile/profile_screen.dart';
-import 'package:mycart/app/screens/wishlist/wishlist_screen.dart';
+import 'package:mycart/app/screens/favourites/favourites_screen.dart';
 import 'package:mycart/app/theme/theme.dart';
 
 class AppNavbarScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _AppNavbarScreenState extends State<AppNavbarScreen> {
     const HomeScreen(),
     const CategoryScreen(),
     const CartScreen(),
-    const WishlistScreen(),
+    const FavouritesScreen(),
     const ProfileScreen(),
   ];
 
@@ -36,14 +36,16 @@ class _AppNavbarScreenState extends State<AppNavbarScreen> {
         decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
-                color: AppColors.inputBoxBackgroundColor,
-                spreadRadius: 5,
-                blurRadius: 10)
+              color: Color.fromARGB(92, 172, 172, 172),
+              spreadRadius: 5,
+              blurRadius: 10,
+            )
           ],
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: BottomNavigationBar(
+          backgroundColor: Colors.transparent,
           type: BottomNavigationBarType.fixed,
           elevation: 0,
           currentIndex: selectedIndex,

@@ -10,8 +10,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
-  Hive.registerAdapter(FavouriteModelAdapter());
-  Hive.openBox<FavouriteModel>('favourite');
+  Hive.registerAdapter(FavouriteModelAdapter()); // Register the adapter first
+  await Hive.openBox<FavouriteModel>('favourite'); // Then open the box
 
   runApp(const MyApp());
 }
@@ -38,10 +38,10 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(create: (context) => FavouriteProvider()),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouteManager.generateRoute,
-        theme: appTheme,
       ),
     );
   }

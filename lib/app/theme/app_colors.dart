@@ -15,4 +15,5 @@ class AppColors {
   static const Color inputBoxBackgroundColor = Color(0xffEFEFEF);
   static const Color backgroundColor = Color(0xffEEEEEE);
   static const Color greyScaffold = Color(0xffF3F6F8);
+  static const Color starColor = Color(0xfffbb022);
 }

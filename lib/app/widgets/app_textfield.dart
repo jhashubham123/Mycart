@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mycart/app/theme/theme.dart';
 
 class AppTextfield {
+  /// App input field
   static Widget appInputField({
-    required String hintText,
+    required String lableText,
     Widget? suffixIcon,
     TextInputType? keyboardType,
     TextInputAction? textInputAction,
@@ -16,8 +17,7 @@ class AppTextfield {
       textInputAction: textInputAction,
       decoration: InputDecoration(
           suffixIcon: suffixIcon,
-          hintText: hintText,
-          hintStyle: AppTextStyles.hintStyle,
+          label: Text(lableText, style: AppTextStyles.hintStyle),
           border: const UnderlineInputBorder(
               borderSide: BorderSide(color: AppColors.textFieldBorderColor)),
           enabledBorder: const UnderlineInputBorder(

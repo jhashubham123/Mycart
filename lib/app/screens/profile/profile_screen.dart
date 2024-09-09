@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycart/app/routes/routes.dart';
 import 'package:mycart/app/theme/app_colors.dart';
 import 'package:mycart/app/theme/app_images.dart';
 import 'package:mycart/app/theme/app_textstyles.dart';
@@ -14,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
         body: Column(
       children: [
         CustomAppBar(
+          customChild: true,
           child: userProfile(context),
         ),
 
@@ -25,10 +27,15 @@ class ProfileScreen extends StatelessWidget {
 
         /// Order tile
         settingTile(context,
-            iconImage: AppImages.redHeart, tileName: 'Edit Profile'),
+            iconImage: AppImages.redHeart, tileName: 'Edit Profile', onTap: () {
+          Navigator.pushNamed(context, RouteNames.editProfileScreen);
+        }),
 
         /// Order tile
-        settingTile(context, iconImage: AppImages.redHeart, tileName: 'Orders'),
+        settingTile(context, iconImage: AppImages.redHeart, tileName: 'Orders',
+            onTap: () {
+          Navigator.pushNamed(context, RouteNames.ordersScreen);
+        }),
 
         /// Address tile
         settingTile(context,

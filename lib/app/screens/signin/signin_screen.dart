@@ -61,7 +61,7 @@ class SigninScreen extends StatelessWidget {
 
                               /// Mobile Number text field
                               AppTextfield.appInputField(
-                                hintText: 'Mobile Number',
+                                lableText: 'Mobile Number',
                                 textInputAction: TextInputAction.next,
                               ),
                               SizedBox(
@@ -70,7 +70,7 @@ class SigninScreen extends StatelessWidget {
 
                               /// Password text field
                               AppTextfield.appInputField(
-                                hintText: 'password',
+                                lableText: 'password',
                                 textInputAction: TextInputAction.done,
                                 suffixIcon: const Icon(
                                   Icons.visibility,

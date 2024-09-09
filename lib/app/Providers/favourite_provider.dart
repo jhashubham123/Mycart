@@ -12,12 +12,29 @@ class FavouriteProvider extends ChangeNotifier {
     required FavouriteModel favouriteModel,
   }) {
     favouriteBox.put(itemId, favouriteModel);
+    notifyListeners();
   }
 
   /// get value from favourite box
   void getFavouriteItem({
-    required int itemId,
+    int? itemId,
   }) {
-    favouriteBox.get(itemId);
+    if (itemId != null) {
+      favouriteBox.get(itemId);
+    }
+    print('product Keys -- ${favouriteBox.length}');
+  }
+
+  /// delete value from favourite box
+  void deleteFavouriteItem({
+    int? itemId,
+  }) {
+    print('itemid--------- $itemId');
+    if (itemId == null) {
+      favouriteBox.clear();
+    }
+    favouriteBox.delete(itemId);
+
+    notifyListeners();
   }
 }

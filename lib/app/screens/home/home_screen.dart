@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    context.read<FavouriteProvider>().getFavouriteItem();
     _pageController.addListener(() {
       setState(() {
         currentPage = _pageController.page!.round();
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
 Widget homeCustomAppBar(context) {
   final size = MediaQuery.of(context).size;
   return CustomAppBar(
+    customChild: true,
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -313,11 +315,69 @@ Widget popularProducts(context) {
           ),
 
           /// Popular Products List
-          const ProductCard(
-            itemCount: 6,
+          ProductCard(
+            productItem: data,
           )
         ],
       ),
     );
   });
 }
+
+class Data {
+  Data({
+    required this.itemId,
+    required this.itemImage,
+    required this.itemName,
+    required this.itemPrice,
+  });
+  final int itemId;
+  final String itemImage;
+  final String itemName;
+  final double itemPrice;
+}
+
+List<Data> data = [
+  Data(
+      itemId: 1,
+      itemImage:
+          'https://static.vecteezy.com/system/resources/previews/024/653/462/original/red-shopping-bag-free-png.png',
+      itemName: 'Clothe Bag',
+      itemPrice: 45),
+  Data(
+      itemId: 2,
+      itemImage:
+          'https://toppng.com/uploads/thumbnail/shopping-bag-png-image-shopping-bag-11562901360iul53pkgq1.png',
+      itemName: 'Clothe Bag2',
+      itemPrice: 98),
+  Data(
+      itemId: 3,
+      itemImage:
+          'https://www.rangresha.com/wp-content/uploads/2019/11/Black-Elephant.png',
+      itemName: 'Clothe Bag3',
+      itemPrice: 67),
+  Data(
+      itemId: 4,
+      itemImage:
+          'https://pakistanicrafts.com/wp-content/uploads/2020/08/pk111111111111111.png',
+      itemName: 'Clothe Bag4',
+      itemPrice: 35),
+  Data(
+      itemId: 5,
+      itemImage:
+          'https://i0.wp.com/indha.in/wp-content/uploads/2023/06/indha-kids-Bag-2.png?fit=2000%2C2000&ssl=1',
+      itemName: 'Clothe Bag5',
+      itemPrice: 113),
+  Data(
+      itemId: 6,
+      itemImage:
+          'https://indha.in/wp-content/uploads/2020/12/IMG_1494-copy-e1626423566255.png',
+      itemName: 'Clothe Bag6',
+      itemPrice: 56),
+  Data(
+      itemId: 7,
+      itemImage:
+          'https://www.boontoon.com/blog/wp-content/uploads/2017/07/mural-pot.png',
+      itemName: 'Clothe Bag7',
+      itemPrice: 48),
+];

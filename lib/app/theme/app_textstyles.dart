@@ -15,10 +15,25 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle red_15_700 = GoogleFonts.openSans(
+    fontSize: 15,
+    color: AppColors.redTextColor,
+    fontWeight: FontWeight.w700,
+  );
+
   static TextStyle red_14_500 = GoogleFonts.openSans(
     fontSize: 14,
     color: AppColors.redTextColor,
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle redUnderline_14_500 = GoogleFonts.openSans(
+    fontSize: 14,
+    color: AppColors.redTextColor,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.underline,
+    decorationColor: AppColors.redTextColor,
+    decorationThickness: 2,
   );
 
   static TextStyle red_16_700 = GoogleFonts.openSans(
@@ -63,6 +78,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
+  static TextStyle dark_17_600 = GoogleFonts.openSans(
+    fontSize: 17,
+    color: AppColors.textDarkColor,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle white_16_500 = GoogleFonts.openSans(
     fontSize: 16,
     color: AppColors.whiteColor,
@@ -77,6 +98,12 @@ class AppTextStyles {
 
   static TextStyle white_15_700 = GoogleFonts.openSans(
     fontSize: 15,
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle white_16_700 = GoogleFonts.openSans(
+    fontSize: 16,
     color: AppColors.whiteColor,
     fontWeight: FontWeight.w700,
   );
@@ -109,6 +136,12 @@ class AppTextStyles {
     fontSize: 14,
     color: AppColors.textDarkColor,
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle dark_14_400 = GoogleFonts.openSans(
+    fontSize: 14,
+    color: AppColors.textDarkColor,
+    fontWeight: FontWeight.w400,
   );
 
   static TextStyle dark_12_500 = GoogleFonts.openSans(

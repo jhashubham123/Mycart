@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mycart/app/routes/routes.dart';
 import 'package:mycart/app/screens/navbar/navbar_screen.dart';
+import 'package:mycart/app/screens/order/order_screen.dart';
+import 'package:mycart/app/screens/product_detail/product_detail_screen.dart';
+import 'package:mycart/app/screens/profile/edit_profile.dart';
 import 'package:mycart/app/screens/signin/signin_screen.dart';
 import 'package:mycart/app/screens/signup/signup_screen.dart';
 import 'package:mycart/app/screens/splash/splash_screen.dart';
@@ -19,6 +22,13 @@ class RouteManager {
         return MaterialPageRoute(builder: (_) => const VerifyScreen());
       case RouteNames.navbarScreen:
         return MaterialPageRoute(builder: (_) => const AppNavbarScreen());
+      case RouteNames.productDetailScreen:
+        return MaterialPageRoute(
+            builder: (_) => const ProductDetailScreen(), settings: settings);
+      case RouteNames.editProfileScreen:
+        return MaterialPageRoute(builder: (_) => const EditProfileScreen());
+      case RouteNames.ordersScreen:
+        return MaterialPageRoute(builder: (_) => const OrderScreen());
       default:
         return MaterialPageRoute(builder: (_) => const ErrorPage());
     }
